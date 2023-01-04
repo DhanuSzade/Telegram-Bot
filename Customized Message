@@ -1,0 +1,40 @@
+import telegram.ext
+
+# with open ("C:\Users\HP\Documents\TOKEN.txt",'r') as f:
+#  TOKEN = f.read()
+    
+def start(update, context):
+    update.message.reply_text("Hello! Welcome To Hixaa_Bot!")
+    
+def help(update, context):
+    update.message.reply_text("""
+    The following commands are available:
+    
+    /start -> Welcome Message
+    /help -> This Message
+    /content -> We Provide Internships
+    /contact -> Information About Contact
+    """)
+    
+    
+def content(update, context):
+    update.message.reply_text("We are Provided Internships!")
+    
+def contact(update, context):
+    update.message.reply_text("You can Contact with us!")
+    
+def handler_message(update, context):
+    update.message.reply_text(f"You said {update.message.text}")
+    
+updater = telegram.ext.Updater('5954374399:AAHFUYNYM7J7LczHTDwxvdH_k0Y7Y53x-UI', use_context=True)
+disp = updater.dispatcher
+
+disp.add_handler(telegram.ext.CommandHandler("start", start))
+disp.add_handler(telegram.ext.CommandHandler("help", help))
+disp.add_handler(telegram.ext.CommandHandler("content", content))
+disp.add_handler(telegram.ext.CommandHandler("contact", contact))
+
+disp.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.text, handler_message))
+
+updater.start_polling()
+updater.idle()
