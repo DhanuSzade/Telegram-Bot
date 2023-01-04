@@ -1,0 +1,21 @@
+import requests
+import time
+
+base_url = "https://api.telegram.org/bot<TOKEN>/sendPhoto"
+
+urls = [
+        "https://unsplash.com/photos/tZw3fcjUIpM/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8d29ya2VyfGVufDB8fHx8MTY3Mjc0ODkyMg&force=true",
+        "https://unsplash.com/photos/wpvEMgFV4w0/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTR8fHdvcmtlcnxlbnwwfHx8fDE2NzI3NDg5MjI&force=true",
+        "https://unsplash.com/photos/_2AlIm-F6pw/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MjB8fHdvcmtlcnxlbnwwfHx8fDE2NzI3NDg5MjI&force=true"
+        
+]
+
+for url in urls:
+    time.sleep(5)  
+    parameters = {
+      "chat_id" : "<CHAT_ID>",
+      "photo" : url,
+      "caption" : "These Worker work without Safety Jacket"
+  }
+    resp = requests.get(base_url, data = parameters)
+    print(resp.text)
