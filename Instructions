@@ -1,0 +1,6 @@
+Telegram Group In which you will send messages
+STEP 2: Telegram BOT & Add Bot in this Group 
+STEP 3: Chat ID : <Chat_ID> (used the message on bhot group - /my_id @*********)
+STEP 4: TOKEN - <Token>       
+STEP 5: https://api.telegram.org/bot<TOKEN>/getUpdates 
+STEP 6: https://api.telegram.org/bot<Token>/sendMessage?chat_id=<Chat_ID>&text="*******"
