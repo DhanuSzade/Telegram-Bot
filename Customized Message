@@ -26,7 +26,7 @@ def contact(update, context):
 def handler_message(update, context):
     update.message.reply_text(f"You said {update.message.text}")
     
-updater = telegram.ext.Updater('5954374399:AAHFUYNYM7J7LczHTDwxvdH_k0Y7Y53x-UI', use_context=True)
+updater = telegram.ext.Updater('<TOKEN>', use_context=True)
 disp = updater.dispatcher
 
 disp.add_handler(telegram.ext.CommandHandler("start", start))
