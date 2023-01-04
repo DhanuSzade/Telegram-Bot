@@ -1,0 +1,6 @@
+import requests
+
+files ={'photo':open('D:\Person without jacket.jpg','rb')}
+
+resp = requests.post('https://api.telegram.org/bot<TOKEN>/sendPhoto?chat_id=<CHAT_ID>&caption=This Worker without Jacket ',files=files)
+print(resp.status_code)
