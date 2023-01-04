@@ -1,0 +1,14 @@
+import requests 
+import time
+
+companies = ['Hixaa is a custom Indusrial technology',
+             'Headquarter is in Nagpur',
+             '20+ employee in last year',
+             'Best company for Freshers',
+             'Work on AI/ML',
+             'Work on Web Development']
+for company in companies:
+
+    base_url ='https://api.telegram.org/bot<TOKEN>/sendMessage?chat_id=<CHAT_ID>&text="{}"'.format(company)
+    requests.get(base_url)
+    time.sleep(2)
